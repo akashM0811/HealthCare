@@ -1,24 +1,25 @@
-import AnatomySection from './dashboard/AnatomySection';
-import HealthStatusCards from './dashboard/HealthStatusCards';
-import CalendarView from './dashboard/CalendarView';
-import UpcomingSchedule from './dashboard/UpcomingSchedule';
-import ActivityFeed from './dashboard/ActivityFeed';
+import AnatomySection from "./dashboard/AnatomySection";
+import CalendarView from "./dashboard/CalendarView";
+import HealthStatusCards from "./dashboard/HealthStatusCards";
+import ActivityFeed from "./dashboard/ActivityFeed";
+import UpcomingSchedule from "./dashboard/UpcomingSchedule";
 
-export default function DashboardMainContent() {
+const DashboardMainContent = () => {
   return (
-    <main className="p-6 bg-[#f5f9ff] overflow-y-auto">
-      <h2 className="text-xl font-bold mb-4">Dashboard</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="col-span-1 lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 p-6 bg-[#f6f9ff] w-full">
+      <div className="col-span-2 space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <AnatomySection />
           <HealthStatusCards />
-          <ActivityFeed />
         </div>
-        <div>
-          <CalendarView />
-          <UpcomingSchedule />
-        </div>
+        <ActivityFeed />
       </div>
-    </main>
+      <div className="space-y-4">
+        <CalendarView />
+        <UpcomingSchedule />
+      </div>
+    </div>
   );
-}
+};
+
+export default DashboardMainContent;

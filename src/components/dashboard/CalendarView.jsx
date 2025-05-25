@@ -1,19 +1,59 @@
-export default function CalendarView() {
+function CalendarView() {
+  const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  const dates = [2, 3, 4, 5, 6, 7, 8];
+
   return (
-    <div className="bg-white rounded-xl shadow p-4 mb-4">
-      <h3 className="font-semibold mb-2">October 2021</h3>
-      <div className="grid grid-cols-7 gap-1 text-xs text-center">
-        {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((d) => (
-          <div key={d} className="font-medium">{d}</div>
-        ))}
-        {[25, 26, 27, 28, 29, 30, 31].map((n) => (
-          <div key={n} className="py-1 text-sm text-gray-600">{n}</div>
+    <div className="bg-white rounded-2xl p-4 shadow-md w-full">
+      <h2 className="text-lg sm:text-xl font-extrabold mb-4">Jun 2025</h2>
+
+      <div className="grid grid-cols-7 gap-2 text-center text-sm text-gray-500 mb-4">
+        {days.map(day => (
+          <span key={day} className="text-xs sm:text-sm">{day}</span>
         ))}
       </div>
-      <div className="mt-4 space-y-2">
-        <div className="bg-indigo-100 text-indigo-700 text-sm px-3 py-2 rounded-lg">Dentist: 09:00–11:00</div>
-        <div className="bg-purple-100 text-purple-700 text-sm px-3 py-2 rounded-lg">Physiotherapy: 11:00–12:00</div>
+
+      <div className="grid grid-cols-7 gap-2 text-center text-sm">
+        {dates.map((date, i) => (
+          <div key={i}>
+            <div className="text-xs mb-1 text-gray-400">{date}</div>
+            <div className="space-y-1">
+              <div
+                className={`rounded-full px-2 sm:px-3 py-1 text-xs font-medium ${
+                  i === 1
+                    ? "bg-indigo-600 text-white"
+                    : "bg-blue-100 text-blue-800"
+                }`}
+              >
+                12:00
+              </div>
+
+              <div
+                className={`rounded-full px-2 sm:px-3 py-1 text-xs font-medium ${
+                  i === 2
+                    ? "bg-green-300 text-gray-600"
+                    : "bg-blue-100 text-blue-800"
+                }`}
+              >
+                14:00
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-6 space-y-4">
+        <div className="bg-indigo-600 text-white rounded-xl px-4 py-3 shadow-sm">
+          <p className="text-sm sm:text-base">Dentist 🦷</p>
+          <p className="text-xs sm:text-sm">12:00–13:00 • Dr. Cameron Williamson</p>
+        </div>
+
+        <div className="bg-green-300 text-green-900 rounded-xl px-4 py-3 shadow-sm">
+          <p className="text-sm sm:text-base">Physiotherapy Appointment 💪</p>
+          <p className="text-xs sm:text-sm">14:00–15:00 • Dr. Kevin Djones</p>
+        </div>
       </div>
     </div>
   );
 }
+
+export default CalendarView;
