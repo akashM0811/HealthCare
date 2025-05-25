@@ -14,44 +14,6 @@ This project is a **pixel-perfect static Healthcare Dashboard** built using **Re
 
 ---
 
-## 📁 Project Structure
-HealthCare/
-├── dist/ # Production build output
-├── node_modules/
-├── public/
-├── src/
-│ ├── assets/ # Image assets
-│ │ ├── body-anatomy.png
-│ │ ├── bone.png
-│ │ ├── heart.png
-│ │ └── teeth.png
-│ ├── components/ # All React components
-│ │ ├── dashboard/
-│ │ │ ├── ActivityFeed.jsx
-│ │ │ ├── AnatomySection.jsx
-│ │ │ ├── CalendarView.jsx
-│ │ │ ├── HealthStatusCards.jsx
-│ │ │ ├── SimpleAppointmentCard.jsx
-│ │ │ └── UpcomingSchedule.jsx
-│ │ ├── DashboardMainContent.jsx
-│ │ ├── Header.jsx
-│ │ └── Sidebar.jsx
-│ ├── App.css
-│ ├── App.jsx
-│ ├── index.js
-│ └── main.jsx
-├── .gitignore
-├── eslint.config.js
-├── index.html
-├── package.json
-├── package-lock.json
-├── postcss.config.js
-├── tailwind.config.js
-├── vite.config.js # Vite config with GitHub Pages base
-└── README.md # You’re reading it!
-
----
-
 ## 🛠️ Tech Stack
 
 - **Framework**: React (with Vite)
